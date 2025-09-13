@@ -2,41 +2,56 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Ocean-themed design system with delightful green palette */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
+    /* Ocean-themed color palette */
+    --background: 157 100% 97%;
+    --foreground: 157 72% 21%;
+    
+    --ocean-primary: 157 90% 26%;    /* #087350 */
+    --ocean-secondary: 157 74% 19%;  /* #08553b */
+    --ocean-accent: 157 57% 31%;     /* #227358 */
+    --ocean-light: 157 45% 85%;
+    --ocean-muted: 157 25% 65%;
+    
+    /* Gradient definitions */
+    --gradient-ocean: linear-gradient(135deg, hsl(var(--ocean-primary)), hsl(var(--ocean-accent)));
+    --gradient-bubble: linear-gradient(180deg, hsl(var(--ocean-light)), hsl(var(--background)));
+    --gradient-wave: linear-gradient(90deg, hsl(var(--ocean-primary) / 0.1), hsl(var(--ocean-accent) / 0.2));
+    
+    /* Semantic tokens */
+    --card: 157 100% 99%;
+    --card-foreground: 157 72% 21%;
+    
+    --popover: 157 100% 99%;
+    --popover-foreground: 157 72% 21%;
+    
+    --primary: 157 90% 26%;
+    --primary-foreground: 157 100% 97%;
+    
+    --secondary: 157 45% 85%;
+    --secondary-foreground: 157 72% 21%;
+    
+    --muted: 157 25% 90%;
+    --muted-foreground: 157 25% 65%;
+    
+    --accent: 157 57% 31%;
+    --accent-foreground: 157 100% 97%;
+    
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
+    
+    --border: 157 25% 85%;
+    --input: 157 25% 95%;
+    --ring: 157 90% 26%;
+    
+    --radius: 0.75rem;
+    
+    /* Animation variables */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +115,76 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+  }
+}
+
+@layer components {
+  /* Ocean-themed component variants */
+  .ocean-card {
+    @apply bg-card border border-border rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:scale-[1.02] hover:border-accent/50;
+  }
+  
+  .ocean-button {
+    @apply bg-primary text-primary-foreground hover:bg-accent font-medium px-6 py-3 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-md;
+  }
+  
+  .wave-animation {
+    @apply relative overflow-hidden;
+  }
+  
+  .wave-animation::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-r from-transparent via-accent/20 to-transparent transform -skew-x-12 -translate-x-full;
+    animation: wave 2s infinite;
+  }
+  
+  .bubble-float {
+    animation: bubble-float 3s ease-in-out infinite;
+  }
+  
+  .fade-in {
+    @apply opacity-0 transform translate-y-4;
+    animation: fade-in 0.6s ease-out forwards;
+  }
+}
+
+@layer utilities {
+  .bg-ocean-gradient {
+    background: var(--gradient-ocean);
+  }
+  
+  .bg-bubble-gradient {
+    background: var(--gradient-bubble);
+  }
+  
+  .bg-wave-pattern {
+    background: var(--gradient-wave);
+  }
+}
+
+/* Keyframe animations */
+@keyframes wave {
+  0% {
+    transform: translateX(-100%) skewX(-12deg);
+  }
+  100% {
+    transform: translateX(200%) skewX(-12deg);
+  }
+}
+
+@keyframes bubble-float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes fade-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
