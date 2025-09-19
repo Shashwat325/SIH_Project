@@ -41,7 +41,7 @@ const PlaceholderPage = ({ title, description, icon, comingSoonFeatures }: Place
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="ocean-card p-12 text-center">
             <h2 className="text-3xl font-bold text-foreground mb-8">
-              🚧 Coming Soon!
+               Coming Soon!
             </h2>
             <p className="text-lg text-muted-foreground mb-12 leading-relaxed">
               We're working hard to bring you amazing features for {title.toLowerCase()}. 
@@ -51,7 +51,7 @@ const PlaceholderPage = ({ title, description, icon, comingSoonFeatures }: Place
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
               <div className="text-left">
                 <h3 className="text-xl font-semibold text-foreground mb-4">
-                  🌟 Planned Features
+                   Planned Features
                 </h3>
                 <ul className="space-y-3">
                   {comingSoonFeatures.map((feature, index) => (
@@ -65,7 +65,7 @@ const PlaceholderPage = ({ title, description, icon, comingSoonFeatures }: Place
               
               <div className="text-left">
                 <h3 className="text-xl font-semibold text-foreground mb-4">
-                  📊 Current Progress
+                   Current Progress
                 </h3>
                 <div className="space-y-4">
                   <div>

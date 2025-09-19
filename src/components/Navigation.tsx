@@ -15,10 +15,10 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className="bg-card shadow-md border-b border-border">
+    <nav className="bg-card shadow-md border-b border-border"style={{position: 'sticky', top: 0, zIndex: 500}}>
       {/* Top Navigation Bar */}
-      <div className="container mx-auto px-4 py-3">
-        <div className="flex items-center justify-between">
+      <div className="container mx-auto px-4 py-3"  >
+        <div className="flex items-center justify-between ">
           <Link to="/" className="text-2xl font-bold text-primary hover:text-accent transition-colors">
             🌊 OceanExplorer
           </Link>
@@ -51,27 +51,7 @@ const Navigation = () => {
         </div>
       </div>
 
-      {/* Menu Bar */}
-      <div className="bg-secondary/30 border-t border-border">
-        <div className="container mx-auto px-4">
-          <div className="flex gap-8">
-            {menuItems.map((item) => (
-              <Link
-                key={item.name}
-                to={item.path}
-                className={`py-4 px-2 font-medium transition-colors relative group ${
-                  location.pathname === item.path
-                    ? "text-primary border-b-2 border-primary"
-                    : "text-foreground hover:text-accent"
-                }`}
-              >
-                {item.name}
-                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-accent scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
-              </Link>
-            ))}
-          </div>
-        </div>
-      </div>
+      
     </nav>
   );
 };

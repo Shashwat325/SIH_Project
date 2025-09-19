@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
-import { Fish, Map, Database, Dna, Waves, ArrowRight } from "lucide-react";
-
+import { Fish, Map, Database, Dna, Waves, ArrowRight,FileAxis3D,LucideTrees } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+  
 const HomePage = () => {
+  const navigate = useNavigate();
   const features = [
     {
       icon: Fish,
@@ -30,6 +32,20 @@ const HomePage = () => {
       description: "Dive into genetic data and molecular marine biology",
       link: "/dna",
       color: "text-ocean-accent"
+    },
+    {
+      icon: FileAxis3D,
+      title: "3D visualization",
+      description: "Watch 3D models of various marine species",
+      link: "/model",
+      color: "text-ocean-accent"
+    },
+    {
+      icon: LucideTrees,
+      title: "Taxonomy",
+      description: "Explore the classification of marine species",
+      link: "/taxonomy",
+      color: "text-ocean-accent"
     }
   ];
 
@@ -55,10 +71,7 @@ const HomePage = () => {
                 <Fish className="w-5 h-5 mr-2" />
                 Explore Species
               </Link>
-              <Link to="/map" className="border-2 border-white text-white hover:bg-white hover:text-primary px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:scale-105">
-                <Map className="w-5 h-5 mr-2 inline" />
-                View Map
-              </Link>
+              
             </div>
           </div>
         </div>

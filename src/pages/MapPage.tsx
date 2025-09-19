@@ -1,7 +1,11 @@
 import { Map, Search, Navigation } from "lucide-react";
+import { MapContainer, TileLayer, useMapEvents, GeoJSON, Marker, Popup, useMap } from "react-leaflet";
+import MapComponent from "./MapComponent";
 import { Link } from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
 const MapPage = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
@@ -14,7 +18,7 @@ const MapPage = () => {
                 Ocean Explorer Map
               </h1>
             </div>
-            <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
+            <p className="text-xl text-muted-foreground mb-8 leading-relaxed text-slate-800">
               Search for your data and see their exact locations on the map! 
               Dive into the ocean world and discover where amazing marine life thrives.
             </p>
@@ -76,9 +80,18 @@ const MapPage = () => {
               <div className="ocean-card p-8 text-center">
                 <div className="bg-gradient-to-br from-ocean-light to-ocean-muted rounded-xl h-96 flex items-center justify-center mb-8 relative overflow-hidden">
                   {/* Animated ocean waves */}
-                  <div className="absolute inset-0 bg-wave-pattern opacity-30"></div>
-                  <div className="relative z-10 text-center">
-                    <Map className="w-24 h-24 text-primary mx-auto mb-4 bubble-float" />
+                  <div className="absolute inset-0 bg-wave-pattern opacity-30 w-full"></div>
+                  <div className="relative z-10  w-full text-center">
+                     <MapContainer center={[20, 78]}
+        zoom={3.3}
+        style={{ height: '100vh', width: '100%' }}
+        className="w-full h-full"
+        worldCopyJump={false}
+        maxBounds={[[5, 60], [38, 100]]}
+        maxBoundsViscosity={1.0}><TileLayer
+                              url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
+                              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
+                            /></MapContainer> 
                     <h3 className="text-2xl font-bold text-foreground mb-2">
                       Interactive Map
                     </h3>
@@ -93,7 +106,7 @@ const MapPage = () => {
                   <div className="absolute top-32 right-32 w-5 h-5 bg-ocean-secondary rounded-full shadow-lg bubble-float" style={{ animationDelay: '2s' }} />
                 </div>
 
-                <button className="ocean-button w-full mb-4">
+                <button className="ocean-button w-full mb-4" onClick={() => navigate('/map/full') }>
                   <Navigation className="w-5 h-5 mr-2" />
                   Go to Interactive Map
                 </button>

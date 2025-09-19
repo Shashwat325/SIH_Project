@@ -80,9 +80,9 @@ const SpeciesListPage = () => {
 
       {/* Species Grid */}
       <section className="py-12">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4" >
           {filteredSpecies.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 " >
               {filteredSpecies.map((species, index) => (
                 <div key={species.id} className="fade-in" style={{ animationDelay: `${index * 0.05}s` }}>
                   <SpeciesCard

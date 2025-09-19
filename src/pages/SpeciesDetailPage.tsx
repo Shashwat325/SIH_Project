@@ -1,6 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import { useEffect, useRef } from "react";
-import { ArrowLeft, Heart, Share2, MapPin, Info } from "lucide-react";
+import { ArrowLeft, Heart, Share2, MapPin, Info, FileAxis3D } from "lucide-react";
 import { getSpeciesById } from "@/data/speciesData";
 import {
   Chart as ChartJS,
@@ -127,7 +127,7 @@ const SpeciesDetailPage = () => {
         },
         ticks: {
           color: 'hsl(157, 25%, 65%)',
-          callback: function(value: any) {
+          callback: function (value: any) {
             return value.toLocaleString();
           },
         },
@@ -141,39 +141,38 @@ const SpeciesDetailPage = () => {
       <section className="bg-bubble-gradient py-12">
         <div className="container mx-auto px-4">
           <div className="flex items-center gap-4 mb-8">
-            <Link 
-              to="/species" 
-              className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
+            <Link
+              to="/species"
+              className="flex items-center gap-2 text-muted-foreground hover:text-primary text-emerald-700 transition-colors"
             >
-              <ArrowLeft className="w-5 h-5" />
+              <ArrowLeft className="w-5 h-5 text-emerald-600" />
               Back to Species
             </Link>
           </div>
-          
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <div className="flex items-center gap-3 mb-4">
                 <span className="px-3 py-1 text-sm font-medium bg-primary text-primary-foreground rounded-full">
                   {species.category}
                 </span>
-                <span className={`px-3 py-1 text-sm font-medium rounded-full ${
-                  species.conservationStatus === 'Least Concern' ? 'bg-green-100 text-green-800' :
-                  species.conservationStatus === 'Near Threatened' ? 'bg-yellow-100 text-yellow-800' :
-                  'bg-blue-100 text-blue-800'
-                }`}>
+                <span className={`px-3 py-1 text-sm font-medium rounded-full ${species.conservationStatus === 'Least Concern' ? 'bg-green-400 text-green-900' :
+                    species.conservationStatus === 'Near Threatened' ? 'bg-yellow-100 text-orange-800' :
+                      'bg-blue-100 text-blue-800'
+                  }`}>
                   {species.conservationStatus}
                 </span>
               </div>
-              
+
               <h1 className="text-5xl font-bold text-foreground mb-6">
                 {species.name}
               </h1>
-              
-              <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
+
+              <p className="text-xl text-muted-foreground mb-8 leading-relaxed text-slate-800">
                 {species.description}
               </p>
-              
-              <div className="flex gap-4">
+
+              {/* <div className="flex gap-4">
                 <button className="ocean-button">
                   <Heart className="w-4 h-4 mr-2" />
                   Favorite
@@ -182,9 +181,9 @@ const SpeciesDetailPage = () => {
                   <Share2 className="w-4 h-4" />
                   Share
                 </button>
-              </div>
+              </div> */}
             </div>
-            
+
             <div className="grid grid-cols-2 gap-4">
               {species.detailImages.map((image, index) => (
                 <div key={index} className="aspect-square rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
@@ -211,25 +210,25 @@ const SpeciesDetailPage = () => {
                   <Info className="w-6 h-6 text-primary" />
                   <h2 className="text-2xl font-bold text-foreground">Species Information</h2>
                 </div>
-                
+
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <h3 className="font-semibold text-foreground mb-2">Habitat</h3>
                     <p className="text-muted-foreground">{species.habitat}</p>
                   </div>
-                  
+
                   <div>
                     <h3 className="font-semibold text-foreground mb-2">Population</h3>
                     <p className="text-muted-foreground">{species.populationLabel}</p>
                   </div>
                 </div>
-                
+
                 <div className="mt-6">
                   <h3 className="font-semibold text-foreground mb-2">Fun Fact! 🎉</h3>
                   <p className="text-muted-foreground">{species.funFact}</p>
                 </div>
               </div>
-              
+
               {/* Population Chart */}
               <div className="ocean-card p-8">
                 <h2 className="text-2xl font-bold text-foreground mb-6">Population Trends</h2>
@@ -238,7 +237,7 @@ const SpeciesDetailPage = () => {
                 </div>
               </div>
             </div>
-            
+
             {/* Sidebar */}
             <div className="space-y-6">
               <div className="ocean-card p-6">
@@ -247,11 +246,32 @@ const SpeciesDetailPage = () => {
                   Location
                 </h3>
                 <p className="text-muted-foreground mb-4">{species.habitat}</p>
-                <Link to="/map" className="ocean-button w-full justify-center">
+                <Link to="/map/full" state={{ query: species.name }} className="ocean-button w-full justify-center">
                   View on Map
                 </Link>
               </div>
               
+              <div className="ocean-card p-6">
+                <h3 className="font-semibold text-foreground mb-4 flex items-center gap-2">
+                  <FileAxis3D className="w-5 h-5" />
+                  Generate 3D Model
+                </h3>
+                <p className="text-muted-foreground mb-4">{species.habitat}</p>
+                <Link to="/model" state={{ query: `generate ${species.name}` }} className="ocean-button w-full justify-center">
+                  Generate 3D Model
+                </Link>
+              </div>
+              <div className="ocean-card p-6">
+                <h3 className="font-semibold text-foreground mb-4 flex items-center gap-2">
+                  <FileAxis3D className="w-5 h-5" />
+                  Taxonomy
+                </h3>
+                <p className="text-muted-foreground mb-4">Discover the classification of {species.name}.</p>
+                <Link to="/taxonomy" state={{ query: species.name }} className="ocean-button w-full justify-center">
+                  View Taxonomy
+                </Link>
+              </div>
+
               <div className="ocean-card p-6">
                 <h3 className="font-semibold text-foreground mb-4">Quick Stats</h3>
                 <div className="space-y-3">
