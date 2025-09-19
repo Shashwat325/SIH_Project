@@ -64,7 +64,7 @@ export const speciesData: Species[] = [
   {
     id: "clarks-clownfish",
     name: "Clark's Clownfish",
-    description: "A vibrant orange fish with a single white band, it forms a symbiotic relationship with sea anemones.",
+    description: "Clark's clownfish (Amphiprion clarkii), also known as the yellowtail clownfish, is one of the most widely distributed and least host-specific anemonefish species. Found throughout the Indo-Pacific from the Persian Gulf to Western Australia, it has a remarkable symbiotic relationship with sea anemones.",
     category: "Fish",
     habitat: "Coral reefs of the Indo-Pacific",
     funFact: "All clownfish are born male, but can change sex to female if the dominant female dies.",

@@ -254,9 +254,9 @@ const SpeciesDetailPage = () => {
               <div className="ocean-card p-6">
                 <h3 className="font-semibold text-foreground mb-4 flex items-center gap-2">
                   <FileAxis3D className="w-5 h-5" />
-                  Generate 3D Model
+                  Visualization
                 </h3>
-                <p className="text-muted-foreground mb-4">{species.habitat}</p>
+                <p className="text-muted-foreground mb-4">Visualize {species.name} in form of a 3d model</p>
                 <Link to="/model" state={{ query: `generate ${species.name}` }} className="ocean-button w-full justify-center">
                   Generate 3D Model
                 </Link>

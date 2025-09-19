@@ -11,9 +11,10 @@ const Menubar = () => {
     { name: "MAP", path: "/map" },
     { name: "SPECIES", path: "/species" },
     { name: "DATA FORUM", path: "/forum" },
-    { name: "DNA", path: "/dna" },
+   
     { name: "3D Visualization", path: "/model" },
     { name: "Taxonomy", path: "/taxonomy" },
+     { name: "DNA", path: "/dna" },
   ];
   return(
     <div>

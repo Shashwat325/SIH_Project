@@ -19,8 +19,8 @@ const MapPage = () => {
               </h1>
             </div>
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed text-slate-800">
-              Search for your data and see their exact locations on the map! 
-              Dive into the ocean world and discover where amazing marine life thrives.
+              
+Search for your data and see their exact locations on the map! Dive into the ocean world and discover where amazing marine life thrives. Pinpoint your favorite creatures, track real-time research, and unlock a deeper understanding of our blue planet.
             </p>
           </div>
         </div>
@@ -38,8 +38,8 @@ const MapPage = () => {
                   <h2 className="text-2xl font-bold text-foreground">Interactive Species Mapping</h2>
                 </div>
                 <p className="text-muted-foreground mb-6 leading-relaxed">
-                  Explore precise locations where marine species have been observed and studied. 
-                  Our interactive map provides real-time data on species distribution, migration patterns, 
+                  Explore precise locations where marine species have been observed and studied.
+                  Our interactive map provides real-time data on species distribution, migration patterns,
                   and conservation zones.
                 </p>
                 <ul className="space-y-3 text-muted-foreground">
@@ -59,10 +59,42 @@ const MapPage = () => {
                     <div className="w-2 h-2 bg-ocean-accent rounded-full"></div>
                     Migration routes and seasonal patterns
                   </li>
+                  <li className="flex items-center gap-3">
+                    <div className="w-2 h-2 bg-ocean-accent rounded-full"></div>
+                    Know about the poluuted area in ocean
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <div className="w-2 h-2 bg-ocean-accent rounded-full"></div>
+                    Natural resources reserves location
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <div className="w-2 h-2 bg-ocean-accent rounded-full"></div>
+                    Areas prone to Shipwrecks
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <div className="w-2 h-2 bg-ocean-accent rounded-full"></div>
+                    Discover marine life at a particular area
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <div className="w-2 h-2 bg-ocean-accent rounded-full"></div>
+                    Use voice command to track species data
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <div className="w-2 h-2 bg-ocean-accent rounded-full"></div>
+                    Pinning data on screen to correlate species
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <div className="w-2 h-2 bg-ocean-accent rounded-full"></div>
+                    Tracking data of a particular area 
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <div className="w-2 h-2 bg-ocean-accent rounded-full"></div>
+                    Searching about location of marine life in simple language
+                  </li>
                 </ul>
               </div>
 
-              <div className="ocean-card p-8">
+              {/* <div className="ocean-card p-8">
                 <h3 className="text-xl font-semibold text-foreground mb-4">
                   🌊 Coming Soon Features
                 </h3>
@@ -72,7 +104,7 @@ const MapPage = () => {
                   <div>• Collaborative research data sharing</div>
                   <div>• Live satellite imagery integration</div>
                 </div>
-              </div>
+              </div> */}
             </div>
 
             {/* Right Content - Map Placeholder */}
@@ -82,16 +114,16 @@ const MapPage = () => {
                   {/* Animated ocean waves */}
                   <div className="absolute inset-0 bg-wave-pattern opacity-30 w-full"></div>
                   <div className="relative z-10  w-full text-center">
-                     <MapContainer center={[20, 78]}
-        zoom={3.3}
-        style={{ height: '100vh', width: '100%' }}
-        className="w-full h-full"
-        worldCopyJump={false}
-        maxBounds={[[5, 60], [38, 100]]}
-        maxBoundsViscosity={1.0}><TileLayer
-                              url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
-                              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
-                            /></MapContainer> 
+                    <MapContainer center={[20, 78]}
+                      zoom={3.3}
+                      style={{ height: '100vh', width: '100%' }}
+                      className="w-full h-full"
+                      worldCopyJump={false}
+                      maxBounds={[[5, 60], [38, 100]]}
+                      maxBoundsViscosity={1.0}><TileLayer
+                        url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
+                        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
+                      /></MapContainer>
                     <h3 className="text-2xl font-bold text-foreground mb-2">
                       Interactive Map
                     </h3>
@@ -99,20 +131,20 @@ const MapPage = () => {
                       Loading ocean exploration data...
                     </p>
                   </div>
-                  
+
                   {/* Floating location pins */}
                   <div className="absolute top-20 left-20 w-4 h-4 bg-primary rounded-full shadow-lg bubble-float" style={{ animationDelay: '0s' }} />
                   <div className="absolute bottom-24 right-16 w-3 h-3 bg-accent rounded-full shadow-lg bubble-float" style={{ animationDelay: '1s' }} />
                   <div className="absolute top-32 right-32 w-5 h-5 bg-ocean-secondary rounded-full shadow-lg bubble-float" style={{ animationDelay: '2s' }} />
                 </div>
 
-                <button className="ocean-button w-full mb-4" onClick={() => navigate('/map/full') }>
+                <button className="ocean-button w-full mb-4" onClick={() => navigate('/map/full')}>
                   <Navigation className="w-5 h-5 mr-2" />
                   Go to Interactive Map
                 </button>
-                
+
                 <p className="text-sm text-muted-foreground">
-                  Full map functionality will be available soon with real-time data integration
+                  Go to the full and interactive map to track the data  of marine life on your screen
                 </p>
               </div>
 

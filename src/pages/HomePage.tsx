@@ -27,13 +27,6 @@ const HomePage = () => {
       color: "text-ocean-secondary"
     },
     {
-      icon: Dna,
-      title: "DNA Analysis",
-      description: "Dive into genetic data and molecular marine biology",
-      link: "/dna",
-      color: "text-ocean-accent"
-    },
-    {
       icon: FileAxis3D,
       title: "3D visualization",
       description: "Watch 3D models of various marine species",
@@ -46,7 +39,14 @@ const HomePage = () => {
       description: "Explore the classification of marine species",
       link: "/taxonomy",
       color: "text-ocean-accent"
-    }
+    },
+    {
+      icon: Dna,
+      title: "DNA Analysis",
+      description: "Dive into genetic data and molecular marine biology",
+      link: "/dna",
+      color: "text-ocean-accent"
+    },
   ];
 
   return (

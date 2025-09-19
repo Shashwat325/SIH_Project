@@ -37,7 +37,7 @@ const App = () => (
             <Route path="/taxonomy" element={<Taxonomy />} />
             <Route path="/forum" element={<OceanicDataTool />} />
             
-            <Route 
+            {/* <Route 
               path="/dna" 
               element={
                 <PlaceholderPage 
@@ -54,7 +54,7 @@ const App = () => (
                   ]}
                 />
               } 
-            />
+            /> */}
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
