@@ -320,10 +320,10 @@ export default function MapComponent() {
   };
 
   const sendQuery = async (q: string, dropCoords = null) => {
-    if (Object.keys(images).includes(q)) {
+     if (Object.keys(images).includes(q)) {
       q = commonToScientific(q);
       q = `only ${q}`;
-    }
+    } 
     const finalQuery = (q || query).trim();
     if (!finalQuery) {
       showStatus('Please enter a query', 'error');
@@ -736,7 +736,7 @@ export default function MapComponent() {
                   style={{ fontSize: '1.5vw' }}
                   onClick={() => {
                     selectItem(item);
-                    sendQuery(item);
+                    sendQuery(`only ${item}`);
                   }}
                 >
                   {item}
@@ -792,7 +792,7 @@ export default function MapComponent() {
           style={{ borderRadius: '20px', height: '100%', fontSize: '1.5vw', alignItems: 'center' }}
           onClick={() => {
             selectItem("Shipwrecks");
-            sendQuery("Shipwrecks");
+            sendQuery("only Shipwrecks");
           }}
         >
           Shipwrecks

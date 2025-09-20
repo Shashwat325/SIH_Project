@@ -60,7 +60,7 @@ const OceanicDataTool: React.FC = () => {
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const uploadAreaRef = useRef<HTMLDivElement>(null);
     const newd = {
-        name: "Global Marine Debris Density",
+        name: "Recorded Ocean conditions ",
         description: "Satellite imagery-based dataset tracking the distribution and density of floating marine debris, including plastics and natural materials.",
         image: i,
         size: "354.8 MB",

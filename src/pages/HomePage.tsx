@@ -56,9 +56,10 @@ const HomePage = () => {
         <div className="absolute inset-0 bg-wave-pattern opacity-30" />
         <div className="relative container mx-auto px-4 py-20">
           <div className="text-center max-w-4xl mx-auto">
-            <div className="flex items-center justify-center mb-6">
-              <Waves className="w-16 h-16 mr-4 bubble-float" />
+            <div className="flex flex-row items-center justify-center mb-6">
+              <img src="/src/assets/circle.png" alt="" style={{height:'10vh',width:'10vw'}}></img>
               <h1 className="text-6xl font-bold">
+                
                 Blue<span className="text-ocean-light">View</span>
               </h1>
             </div>
