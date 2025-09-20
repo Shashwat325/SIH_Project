@@ -306,7 +306,7 @@ export default function MapComponent() {
   const dropQuery = (pos: LatLng) => {
     setFishPos(pos);
     const center: [number, number] = [pos.lng, pos.lat];
-    const radius: number = 300; // in kilometers
+    const radius: number = 150; // in kilometers
     const options = { steps: 64, units: 'kilometers' as const };
     const circle = turf.circle(center, radius, options);
     const boundingBox = turf.bbox(circle);
