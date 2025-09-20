@@ -1,6 +1,20 @@
 import React, { useState, useRef, useEffect } from 'react';
 import * as Papa from 'papaparse';
-import * as Chart from 'chart.js';
+import {
+  Chart,
+  ScatterController,
+  PointElement,
+  LinearScale,
+  CategoryScale
+} from 'chart.js';
+
+Chart.register(
+  ScatterController,
+  PointElement,
+  LinearScale,
+  CategoryScale
+);
+
 import { X } from 'lucide-react';
 import i from '/src/assets/newdataimg.png';
 
@@ -28,7 +42,7 @@ const OceanicDataTool: React.FC = () => {
     const [processedData, setProcessedData] = useState<DataRow[]>([]);
     const [dataHeaders, setDataHeaders] = useState<string[]>([]);
     const [numericColumns, setNumericColumns] = useState<string[]>([]);
-    const [currentChart, setCurrentChart] = useState<Chart.Chart | null>(null);
+    const [currentChart, setCurrentChart] = useState<Chart | null>(null);
     const [processingStep, setProcessingStep] = useState<number>(0);
     const [isLoading, setIsLoading] = useState<boolean>(false);
     const [showChart, setShowChart] = useState<boolean>(false);
@@ -190,7 +204,7 @@ const OceanicDataTool: React.FC = () => {
                 y: row[yColumn]
             }));
 
-        const chart = new Chart.Chart(ctx, {
+        const chart = new Chart(ctx, {
             type: 'scatter',
             data: {
                 datasets: [{
