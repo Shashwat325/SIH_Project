@@ -1,7 +1,7 @@
-import { Search, User, UserPlus } from "lucide-react";
+import { Search, User, UserPlus,MapPin } from "lucide-react";
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-
+import icon from '/src/assets/circle.png'
 const Navigation = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const location = useLocation();
@@ -18,9 +18,10 @@ const Navigation = () => {
     <nav className="bg-card shadow-md border-b border-border"style={{position: 'sticky', top: 0, zIndex: 500}}>
       {/* Top Navigation Bar */}
       <div className="container mx-auto px-4 py-3"  >
-        <div className="flex items-center justify-between ">
-          <Link to="/" className="text-2xl font-bold text-primary hover:text-accent transition-colors">
-            🌊 OceanExplorer
+        <div className="flex flex-row items-center justify-between ">
+          <Link to="/" className="text-2xl font-bold text-primary hover:text-accent flex flex-row transition-colors">
+            
+            <div className="flex flex-row items-center justify-center"><img src="/src/assets/circle.png" alt="" style={{height:'8vh',width:'8vw'}} />Blue View</div>
           </Link>
           
           {/* Search Bar */}
@@ -39,14 +40,19 @@ const Navigation = () => {
 
           {/* Auth Buttons */}
           <div className="flex gap-3">
+            <Link to='/species'>
             <button className="flex items-center gap-2 px-4 py-2 text-foreground hover:text-accent border border-border rounded-lg hover:border-accent transition-colors">
-              <User className="w-4 h-4" />
-              Sign In
+              <div className="text-xl mb-1">🦈</div>
+              
+              View species
             </button>
+            </Link>
+            <Link to='/map/full'>
             <button className="ocean-button flex items-center gap-2">
-              <UserPlus className="w-4 h-4" />
-              Register
+              <MapPin className="w-4 h-4 " />
+              View Map
             </button>
+            </Link>
           </div>
         </div>
       </div>

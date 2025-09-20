@@ -118,7 +118,7 @@ function QueryResultsLayer({ geoJsonData, pinnedGeoJsonData, colors }: QueryResu
               });
             }}
             onEachFeature={(feature, layer) => {
-              let popupContent = `<strong>Dataset:</strong> ${filename}<br>`;
+              let popupContent = `<strong>Dataset:</strong>  ${filename} <br>`;
               if (feature.properties) {
                 Object.keys(feature.properties).forEach((key) => {
                   popupContent += `<strong>${key}:</strong> ${feature.properties[key]}<br>`;

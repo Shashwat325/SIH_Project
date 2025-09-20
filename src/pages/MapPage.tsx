@@ -139,7 +139,7 @@ Search for your data and see their exact locations on the map! Dive into the oce
                 </div>
 
                 <button className="ocean-button w-full mb-4" onClick={() => navigate('/map/full')}>
-                  <Navigation className="w-5 h-5 mr-2" />
+                  <Navigation className=" absolute w-5 h-7 mr-1" />
                   Go to Interactive Map
                 </button>
 
@@ -155,7 +155,7 @@ Search for your data and see their exact locations on the map! Dive into the oce
                   <div className="text-sm font-medium text-foreground">View Species</div>
                 </Link>
                 <div className="ocean-card p-6 text-center cursor-not-allowed opacity-75">
-                  <div className="text-3xl mb-3">📊</div>
+                  <div className="text-3xl mb-3"></div>
                   <div className="text-sm font-medium text-muted-foreground">Research Data</div>
                 </div>
               </div>
