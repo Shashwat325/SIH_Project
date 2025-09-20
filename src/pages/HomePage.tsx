@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Fish, Map, Database, Dna, Waves, ArrowRight,FileAxis3D,LucideTrees } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-  
+import icon from '/src/assets/circle.png'
 const HomePage = () => {
   const navigate = useNavigate();
   const features = [
@@ -57,7 +57,7 @@ const HomePage = () => {
         <div className="relative container mx-auto px-4 py-20">
           <div className="text-center max-w-4xl mx-auto">
             <div className="flex flex-row items-center justify-center mb-6">
-              <img src="/src/assets/circle.png" alt="" style={{height:'10vh',width:'10vw'}}></img>
+              <img src={icon} alt="" style={{height:'10vh',width:'10vw'}}></img>
               <h1 className="text-6xl font-bold">
                 
                 Blue<span className="text-ocean-light">View</span>

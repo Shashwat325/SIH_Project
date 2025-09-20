@@ -21,7 +21,7 @@ const Navigation = () => {
         <div className="flex flex-row items-center justify-between ">
           <Link to="/" className="text-2xl font-bold text-primary hover:text-accent flex flex-row transition-colors">
             
-            <div className="flex flex-row items-center justify-center"><img src="/src/assets/circle.png" alt="" style={{height:'8vh',width:'8vw'}} />Blue View</div>
+            <div className="flex flex-row items-center justify-center"><img src={icon} alt="" style={{height:'8vh',width:'8vw'}} />Blue View</div>
           </Link>
           
           {/* Search Bar */}
