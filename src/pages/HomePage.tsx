@@ -59,7 +59,7 @@ const HomePage = () => {
             <div className="flex items-center justify-center mb-6">
               <Waves className="w-16 h-16 mr-4 bubble-float" />
               <h1 className="text-6xl font-bold">
-                Ocean<span className="text-ocean-light">Explorer</span>
+                Blue<span className="text-ocean-light">View</span>
               </h1>
             </div>
             <p className="text-xl text-ocean-light mb-8 leading-relaxed">

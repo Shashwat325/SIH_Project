@@ -444,7 +444,7 @@ const IntegratedModelGenerator: React.FC = () => {
               p-3 rounded-lg text-sm leading-relaxed
               ${message.sender === 'user'
                   ? 'bg-green-600 bg-opacity-20 text-green-300 border-l-4 border-green-900'
-                  : 'bg-gray-400 bg-opacity-30 text-green-200'
+                  : 'bg-zinc-700 bg-opacity-30 text-white'
                 }
             `}>
                 {message.text}

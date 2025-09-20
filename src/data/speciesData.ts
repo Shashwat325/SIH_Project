@@ -77,7 +77,7 @@ export const speciesData: Species[] = [
    {
     id: "indian-oil-sardine",
     name: "Indian Oil Sardine",
-    description: "A small, silvery fish that forms large schools, a vital part of the marine food chain and a commercial delicacy.",
+    description: "The Indian oil sardine (Sardinella longiceps) is a small, oily fish found in large numbers along the Indian coastline, especially in the Arabian Sea. It is one of the most important fish species for India’s coastal fisheries, both economically and nutritionally.",
     category: "Fish",
     habitat: "Coastal waters of the Indian subcontinent",
     funFact: "Known for its high oil content, making it a valuable source of omega-3 fatty acids.",
@@ -90,7 +90,7 @@ export const speciesData: Species[] = [
   {
     id: "indian-anchovy",
     name: "Indian Anchovy",
-    description: "A small, slender fish characterized by its elongated body, forming large, silvery shoals in coastal areas.",
+    description: "The Indian anchovy (Stolephorus indicus), also known as Hardenberg's anchovy, is a species of ray-finned fish belonging to the family Engraulidae. These are small, schooling fish that are an important part of the marine ecosystem and a significant food source for both humans and larger predatory fish.",
     category: "Fish",
     habitat: "Coastal and brackish waters of the Indian Ocean",
     funFact: "They are a key prey species for larger fish, birds, and marine mammals.",
@@ -103,7 +103,7 @@ export const speciesData: Species[] = [
   {
     id: "indian-mackerel",
     name: "Indian Mackerel",
-    description: "A schooling fish with a distinctive striped back and silvery underbelly, common in tropical waters.",
+    description: "The Indian mackerel, scientifically known as Rastrelliger kanagurta, is a highly significant fish species in the Indo-Pacific region. It's a key part of the marine ecosystem and a major component of coastal fisheries.",
     category: "Fish",
     habitat: "Coastal waters of the Indo-Pacific",
     funFact: "Forms large schools near the surface, making them a common sight for fishermen.",
@@ -129,7 +129,7 @@ export const speciesData: Species[] = [
   {
     id: "sea-lettuce",
     name: "Sea lettuce",
-    description: "A common green seaweed with thin, blade-like fronds resembling lettuce leaves.",
+    description: "A common green seaweed with thin, blade-like fronds resembling lettuce leaves.Sea lettuce is a cosmopolitan species, meaning it is found in oceans and coastal waters across the globe, from tropical to polar climates.",
     category: "Algae",
     habitat: "Intertidal zones and estuaries worldwide",
     funFact: "Can be used in human cuisine, particularly in salads and soups.",
@@ -142,7 +142,7 @@ export const speciesData: Species[] = [
   {
     id: "sea-sparkle",
     name: "Sea sparkle (bioluminescent dinoflagellate)",
-    description: "A single-celled organism that glows with a brilliant blue light when disturbed.",
+    description: "A single-celled organism that glows with a brilliant blue light when disturbed.These organisms are found in coastal waters worldwide, from tropical to temperate and northern seas.",
     category: "Plankton",
     habitat: "Coastal marine environments",
     funFact: "Causes the 'bioluminescent waves' phenomenon, a breathtaking natural light show at night.",

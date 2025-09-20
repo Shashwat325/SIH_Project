@@ -410,7 +410,14 @@ const OceanicDataTool: React.FC = () => {
             }, 2000);
         }, 2000);
     };
-
+    /* useEffect(() => {
+      if(newdataset){
+        setShowFormatControls(false);
+      }
+    
+      
+    }, [newdataset])
+     */
     const getDataSummary = () => {
         const totalRows = processedData.length;
         const totalCols = dataHeaders.length;
@@ -584,24 +591,24 @@ const OceanicDataTool: React.FC = () => {
 
                     {/* Recommendation Section */}
                     {showRecommendation && (
-                        <div className="bg-slate-800/80 border-2 border-cyan-400 rounded-2xl p-8 mt-6">
-                            <div className="text-xl font-semibold text-cyan-400 mb-4"> Format Recommendation</div>
+                        <div className="bg-slate-800/80 border-2 border-cyan-400 rounded-2xl p-8 mt-6 flex flex-col items-center justify-center">
+                            <div className="text-xl font-bold text-cyan-300 mb-4"> Format Recommendation</div>
                             <div className="text-lg leading-relaxed mb-6 text-slate-200">
                                 {recommendationText}
                             </div>
                             {formatRecommendation && (
-                                <div className="bg-gradient-to-r from-cyan-400 to-teal-400 text-slate-900 p-4 rounded-xl text-xl font-bold text-center my-6">
+                                <div className="bg-yellow-300 border-1 border-orange-600 text-slate-900 w-1/2  p-4 rounded-xl text-xl font-bold text-center my-6">
                                     {formatRecommendation}
                                 </div>
                             )}
                             {showFormatControls && (
                                 <div className="text-center space-x-4">
-                                    <button className="bg-gradient-to-r from-cyan-400 to-teal-400 text-slate-900 px-6 py-3 rounded-full font-bold hover:from-cyan-300 hover:to-teal-300 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-cyan-400/30"
-                                        onClick={()=>{setnewdataset([newd,...newdataset]); setShowFormatControls(false); handlemessage("NetCDF");}}>
+                                    <button className="bg-gradient-to-r from-cyan-400 to-teal-400 text-white px-6 py-3 rounded-full font-bold hover:from-cyan-300 hover:to-teal-300 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-cyan-400/30"
+                                        onClick={()=>{setnewdataset([newd,...newdataset]); setShowRecommendationStep(false); handlemessage("NetCDF");setdisplaychart(false)}}>
                                         Accept Recommendation
                                     </button>
-                                    <button className="bg-gradient-to-r from-cyan-400 to-teal-400 text-slate-900 px-6 py-3 rounded-full font-bold hover:from-cyan-300 hover:to-teal-300 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-cyan-400/30"
-                                    onClick={()=>{setnewdataset([newd,...newdataset]); setShowFormatControls(false); handlemessage("CSV");}}>
+                                    <button className="bg-gradient-to-r from-cyan-400 to-teal-400 text-white px-6 py-3 rounded-full font-bold hover:from-cyan-300 hover:to-teal-300 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-cyan-400/30"
+                                    onClick={()=>{setnewdataset([newd,...newdataset]); setShowRecommendationStep(false); handlemessage("CSV");setdisplaychart(false)}}>
                                         Keep as CSV
                                     </button>
                                 </div>

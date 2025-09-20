@@ -35,11 +35,17 @@ const Taxonomy: React.FC = () => {
     "Sardinella_longiceps": "Indian Oil Sardine",
     "Hypnea_musciformis": "Mossy red seaweed"
   }
-  const yft = {
+  const wtf={ "Yellowfin Tuna" : {
     name: "Thunnus_albacares",
     code1: '916275',
     code2: 'x573,y-146,w1.0805'
-  }
+  },
+  "Indian Mackerel":{name:"Rastrelliger_kanagurta",code1:'916275',code2: 'x573,y-146,w1.0805'},
+  "Clark's Clownfish":{name:'Amphiprion clarkii',code1: '674637',code2: 'x331,y457,w0.8857'},
+  "Indian Anchovy":{name:'Stolephorus indicus',code1: '93274',code2: 'x683,y713,w0.8857'},
+  "Indian Oil Sardine":{name:'Sardinella longiceps', code1:'432673',code2: 'x1042,y435,w0.8857'},
+  "Mossy red seaweed":{name:'Chondrus crispus',code1: '878946',code2: 'x331,y228,w0.8857'}
+}
   const [searchQuery, setSearchQuery] = useState('');
   const [results, setResults] = useState<Species[]>([]);
   const [loading, setLoading] = useState(false);
@@ -238,11 +244,7 @@ const Taxonomy: React.FC = () => {
   useEffect(() => {
     if (fq) {
       
-      Object.keys(scientifictocommon).forEach((key) => {
-        if (scientifictocommon[key] === fq) {
-            showStaticOneZoom(yft.name,yft.code1,yft.code2)
-        }
-      });
+      Object.keys(wtf).includes(fq)?(showStaticOneZoom(wtf[fq].name,wtf[fq].code1,wtf[fq].code2)):showStaticOneZoom('',"","");
     }
   }, [fq])
 

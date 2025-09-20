@@ -151,7 +151,7 @@ Search for your data and see their exact locations on the map! Dive into the oce
               {/* Quick Access */}
               <div className="grid grid-cols-2 gap-4">
                 <Link to="/species" className="ocean-card p-6 text-center hover:scale-105 transition-transform">
-                  <div className="text-3xl mb-3">🐠</div>
+                  <div className="text-3xl mb-3">🦈</div>
                   <div className="text-sm font-medium text-foreground">View Species</div>
                 </Link>
                 <div className="ocean-card p-6 text-center cursor-not-allowed opacity-75">
