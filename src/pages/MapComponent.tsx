@@ -417,24 +417,6 @@ export default function MapComponent() {
     }
   };
 
-  const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === 'Enter') {
-      sendQuery(query);
-      setQuery("");
-      SpeechRecognition.stopListening();
-      resetTranscript();
-    }
-  };
-
-  const handleButtonKeyPress = (e: React.KeyboardEvent<HTMLButtonElement>) => {
-    if (e.key === 'Enter') {
-      sendQuery(query);
-      setQuery("");
-      SpeechRecognition.stopListening();
-      resetTranscript();
-    }
-  };
-
   const dropdown = (a: string) => {
     setOpenlist(openlist === a ? null : a);
   };
@@ -448,6 +430,27 @@ export default function MapComponent() {
   if (!browserSupportsSpeechRecognition) {
     return <span>Your browser does not support speech search</span>;
   }
+    const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      const fquery=transcript || query;
+      SpeechRecognition.stopListening();
+      resetTranscript();
+      setQuery("");
+      if(fquery)
+        sendQuery(fquery);
+    }
+  };
+
+  const handleButtonKeyPress = (e: React.KeyboardEvent<HTMLButtonElement>) => {
+    if (e.key === 'Enter') {
+      const fquery=transcript || query;
+      SpeechRecognition.stopListening();
+      resetTranscript();
+      setQuery("");
+      if(fquery)
+        sendQuery(fquery);
+    }
+  };
   useEffect(() => {
     if (fishquery) {
       sendQuery(fishquery);
@@ -882,7 +885,7 @@ export default function MapComponent() {
           placeholder="Search for oceanic data..."
           className="px-4 py-3 rounded-full border border-gray-300 flex-1"
           value={query}
-          onChange={(e: React.ChangeEvent<HTMLInputElement>) => setQuery(e.target.value)}
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) => {setQuery(e.target.value); resetTranscript()}}
           onKeyDown={handleKeyPress}
           disabled={loading}
         />
