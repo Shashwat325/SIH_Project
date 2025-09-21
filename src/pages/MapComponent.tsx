@@ -885,7 +885,7 @@ export default function MapComponent() {
           placeholder="Search for oceanic data..."
           className="px-4 py-3 rounded-full border border-gray-300 flex-1"
           value={query}
-          onChange={(e: React.ChangeEvent<HTMLInputElement>) => {setQuery(e.target.value); resetTranscript()}}
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) => {setQuery(e.target.value);}}
           onKeyDown={handleKeyPress}
           disabled={loading}
         />

@@ -1,9 +1,74 @@
 import { Link } from "react-router-dom";
-import { Fish, Map, Database, Dna, Waves, ArrowRight,FileAxis3D,LucideTrees } from "lucide-react";
+import { Fish, Map, Database, Dna, Waves, ArrowRight, FileAxis3D, LucideTrees } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useEffect, useRef } from "react";
 import icon from '/src/assets/circle.png'
+
 const HomePage = () => {
   const navigate = useNavigate();
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+
+  // API URLs to check
+  const APIs = [
+    'https://sih-oceanic-project.onrender.com',
+    'https://sih2-mcg2.onrender.com'
+  ];
+
+  // Function to check a single API
+  const checkAPI = async (url: string) => {
+    const startTime = Date.now();
+    
+    try {
+      const response = await fetch(`${url}/`, {
+        method: 'GET',
+        mode: 'cors',
+        cache: 'no-cache'
+      });
+
+      const endTime = Date.now();
+      const duration = endTime - startTime;
+
+      if (response.ok) {
+        console.log(`✅ ${url} - Online (${duration}ms)`);
+      } else {
+        console.log(`❌ ${url} - Error ${response.status} (${duration}ms)`);
+      }
+    } catch (error) {
+      const endTime = Date.now();
+      const duration = endTime - startTime;
+      console.log(`❌ ${url} - Offline (${duration}ms)`);
+    }
+  };
+
+  // Function to check all APIs
+  const checkAllAPIs = async () => {
+    console.log('🔄 Checking API status...');
+    const promises = APIs.map(api => checkAPI(api));
+    await Promise.all(promises);
+    console.log(`📊 Next check in 15 seconds at ${new Date(Date.now() + 15000).toLocaleTimeString()}`);
+  };
+
+  // Start API checking when component mounts
+  useEffect(() => {
+    console.log('🚀 Starting API monitoring...');
+    
+    // Check immediately when component mounts
+    checkAllAPIs();
+
+    // Set up interval to check every 15 seconds
+    intervalRef.current = setInterval(() => {
+      checkAllAPIs();
+    }, 15000);
+
+    // Cleanup interval when component unmounts
+    return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+        console.log('🛑 API monitoring stopped');
+      }
+    };
+  }, []); // Empty dependency array means this runs once on mount
+
   const features = [
     {
       icon: Fish,
