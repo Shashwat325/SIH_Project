@@ -125,7 +125,7 @@ const HomePage = () => {
               <img src={icon} alt="" style={{height:'10vh',width:'10vw'}}></img>
               <h1 className="text-6xl font-bold">
                 
-                Blue<span className="text-ocean-light">View</span>
+                Arna<span className="text-ocean-light">Vithi</span>
               </h1>
             </div>
             <p className="text-xl text-ocean-light mb-8 leading-relaxed">
